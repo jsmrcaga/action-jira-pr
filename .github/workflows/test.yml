@@ -1,0 +1,22 @@
+name: 'Self test'
+
+on: ['push', 'pull_request']
+
+jobs:
+  self_test:
+    name: 'Tests itself'
+    runs-on: ubuntu-latest
+
+    steps:
+      # Use checkout to load code
+      - uses: actions/checkout@v1
+      # Install packages
+      - name: 'Npm install'
+        run: npm install
+      # 
+      - name: 'Run itself'
+        uses: ./
+        with:
+          jira_username: ${{ secrets.JIRA_USERNAME }}
+          jira_token: ${{ secrets.JIRA_TOKEN }}
+          jira_hostname: ${{ secrets.JIRA_HOSTNAME }}
