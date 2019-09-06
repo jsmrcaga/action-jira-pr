@@ -1,0 +1,22 @@
+name: 'Weezevent JIRA Pull Request'
+author: 'WeezTeam'
+description: "Triggered whenever a pull request is opened or merged, updates linked JIRA issue"
+
+runs:
+  using: 'node12'
+  main: 'main.js'
+
+inputs:
+  jira_username:
+    description: 'The JIRA username used for authentication, for example my.name@myorg.com'
+    required: true
+  jira_token:
+    description: 'The JIRA account token (not password) used for authentication'
+    required: true
+  jira_hostname:
+    description: 'The JIRA hostname used to call the api, example: jira.atlassian.net'
+    required: true
+
+branding:
+  icon: git-pull-request
+  color: green
