@@ -4,9 +4,9 @@ const Jira = require('../lib/jira/jira');
 
 describe('Jira client tests', () => {
 	const key = 'PRO-1391';
-	const username = null;
-	const token = null;
-	const hostname = null;
+	const username = 'test-username';
+	const token = 'token';
+	const hostname = 'host.na.me';
 	const jira = new Jira({ username, token, hostname });
 
 	it('Shoud generate a basic auth base64 header', () => {

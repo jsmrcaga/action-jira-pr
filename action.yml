@@ -16,6 +16,10 @@ inputs:
   jira_hostname:
     description: 'The JIRA hostname used to call the api, example: jira.atlassian.net'
     required: true
+  debug:
+    description: 'Should the action output debug information'
+    required: false
+    default: false
 
 branding:
   icon: git-pull-request
